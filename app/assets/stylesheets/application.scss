@@ -1,3 +1,13 @@
 @import "bootstrap";
 @import "navbar";
 @import "posts";
+
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 1px 1px 1px black;
+    background-color: #white;
+}

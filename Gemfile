@@ -22,19 +22,22 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Reduces boot times through caching; required in config/boot.rb
+gem 'mini_magick', '~> 4.8'
+#style
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'jquery-rails'
+gem 'rails-ujs', '~> 5.1.0.beta1'
+gem 'bootstrap', '~> 4.2.1'
+#viewed counter
+gem "punching_bag"
+#image uploader
+gem 'carrierwave', '~> 1.0'
+#link naming
+gem 'friendly_id', '~> 5.2.4'
+#env configuration
+gem "figaro"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,7 +53,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

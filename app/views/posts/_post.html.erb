@@ -1,7 +1,7 @@
 <div class='col-sm-6 col-lg-4'>
   <div class="card">
   	<% if post.image.file.nil? %>
-  		<div class="card-topper" style='background-image: url(https://static.pexels.com/photos/113762/pexels-photo-113762-large.jpeg);'></div>
+  		<div class="card-topper" style='background-image: url(https://images.pexels.com/photos/1709531/pexels-photo-1709531.jpeg);'></div>
     <% else %>
     	<div class="card-topper" style='background-image: url(<%= post.image_url(:thumb) %>);'></div>
     <% end %>	

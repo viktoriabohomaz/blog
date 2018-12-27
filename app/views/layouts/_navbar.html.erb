@@ -15,10 +15,17 @@
     <a class='navbar-brand' href='/'>
       Test<span class='light'>blog</span>
     </a>
+    <nav class="navbar navbar-expand-sm">
     <ul class="nav navbar-nav pull-sm-right hidden-xs-down">
       <li class="nav-item">
         <%= link_to 'Blog', root_path, class: "nav-link #{yield(:blog_active)}" %>
       </li>
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to 'Log out', destroy_user_session_path, class: "nav-link" %>
+      </li>
+    <% end %>  
     </ul>
+  </nav>
   </div>
 </nav>

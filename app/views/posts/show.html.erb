@@ -5,6 +5,6 @@
   <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xs-text-center">	
     <h1><%= @post.title %></h1>
     <p>Viewed <%= @post.hits%></p>
-    <%= @post.description %>
+    <%= @post.description.html_safe %>
   </div>
 </div>

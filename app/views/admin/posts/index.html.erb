@@ -1,0 +1,23 @@
+<% provide(:page_title, "All Posts | Admin ") %>
+<h1>Posts</h1>
+<div class="row">
+  <table class="table table-striped">
+  <% @posts.each do |post| %>  
+    <tr>
+      <td><%= link_to post.title, post %></td>
+      <td><%= author(post: post) %></td>
+      <td><%= post.created_at %></td>
+      
+      <td><%= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-sm btn-warning' %></td>
+      <% if current_user.role == 'admin' %>
+        <td><%= link_to 'Remove', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, 
+      class: 'btn btn-sm btn-danger' %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </table>
+  <%= paginate @posts %> 
+  <div>
+    <%= link_to 'New post', new_admin_post_path, class: 'btn btn-secondary btn-lg' %>
+  </div>
+</div>

@@ -44,6 +44,11 @@ gem 'kaminari'
 gem 'rubocop'
 #user authentification
 gem 'devise'
+#user authorization
+gem 'pundit'
+
+gem 'ckeditor'
+gem 'rails-html-sanitizer'
 
 gem 'bullet'
 group :development, :test do

@@ -1,0 +1,18 @@
+<h1>Users</h1>
+<div class="row">
+  <table class="table table-striped">
+  <% @users.each do |user| %>  
+    <tr>
+      <td><%= link_to user.email %></td>
+      <td><%= user.role %></td>
+      <td><%= user.posts_count %> post(s)</td>
+      <td><%= user.created_at %></td>
+      <td><%= link_to 'Remove', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, 
+      class: 'btn btn-sm btn-danger' %></td>
+    </tr>
+  <% end %>
+  </table>
+  <div>
+    <%= link_to 'New user', new_admin_user_path, class: 'btn btn-primary btn-lg' %>
+  </div>
+</div>

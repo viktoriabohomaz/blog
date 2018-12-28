@@ -1,5 +1,6 @@
 module Admin
   class UsersController < ApplicationController
+    helper UserHelper
     before_action :authenticate_user!
 
     def index

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -25,56 +27,58 @@ gem 'jbuilder', '~> 2.5'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
-#style
+# style
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
 gem 'rails-ujs', '~> 5.1.0.beta1'
-gem 'bootstrap', '~> 4.2.1'
-#viewed counter
-gem "punching_bag"
-#image uploader
+# viewed counter
+gem 'punching_bag'
+# image uploader
 gem 'carrierwave', '~> 1.0'
-#link naming
+# link naming
 gem 'friendly_id', '~> 5.2.4'
-#env configuration
-gem "figaro"
-#pagination
+# env configuration
+gem 'figaro'
+# pagination
 gem 'kaminari'
-#code style
+# code style
 gem 'rubocop'
-#user authentification
+# user authentification
 gem 'devise'
-#user authorization
+# user authorization
 gem 'pundit'
 
 gem 'ckeditor'
 gem 'rails-html-sanitizer'
 
 gem 'bullet'
+
+gem 'rubocop'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'faker'
+  gem 'rspec-rails'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :test do
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 4.0'
   gem 'faker'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov', require: false
-  gem 'capybara'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

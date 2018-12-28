@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update]
+  before_action :set_post, only: %i[show update]
 
   def index
     @posts = Post.order(:created_at).page(params[:page])
@@ -14,16 +16,17 @@ class PostsController < ApplicationController
       redirect_to @post, notice: 'Post was successfully updated.'
     else
       render :edit
-    end  
+    end
   end
 
   private
-    def set_post
-      @post = Post.friendly.find(params[:id])
-      authorize @post
-    end
 
-    def post_params
-      params.require(:post).permit(:title, :description, :image)
-    end
+  def set_post
+    @post = Post.friendly.find(params[:id])
+    authorize @post
+  end
+
+  def post_params
+    params.require(:post).permit(:title, :description, :image)
+  end
 end

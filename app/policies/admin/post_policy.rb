@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 class Admin::PostPolicy < ApplicationPolicy
-	attr_reader :user, :record
+  attr_reader :user, :record
 
   def initialize(user, record)
     @user = user
     @record = record
   end
 
-	def index?
+  def index?
     true
   end
 
@@ -33,7 +35,7 @@ class Admin::PostPolicy < ApplicationPolicy
   def destroy?
     admin?
   end
-		
+
   class Scope < Scope
     def resolve
       scope.all

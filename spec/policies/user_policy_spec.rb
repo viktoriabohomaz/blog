@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe UserPolicy do
@@ -5,7 +7,7 @@ RSpec.describe UserPolicy do
 
   subject { described_class }
 
-  permissions ".scope" do
+  permissions '.scope' do
     pending "add some examples to (or delete) #{__FILE__}"
   end
 

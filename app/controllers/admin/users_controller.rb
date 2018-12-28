@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Admin
   class UsersController < ApplicationController
     helper UserHelper
@@ -6,9 +8,9 @@ module Admin
     def index
       @users = User.all
     end
-      
+
     def new
-      @user = User.new  
+      @user = User.new
     end
 
     def create
@@ -23,12 +25,13 @@ module Admin
     def destroy
       @user = User.find(params[:id])
       @user.destroy
-      redirect_to admin_users_path, notice: 'User was successfully deleted.' 
+      redirect_to admin_users_path, notice: 'User was successfully deleted.'
     end
 
     private
-      def user_params
-        params.require(:user).permit(:email, :password, :password_confirmation)
-      end
+
+    def user_params
+      params.require(:user).permit(:email, :password, :password_confirmation)
+    end
   end
 end

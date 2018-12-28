@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Use this hook to configure ckeditor
 Ckeditor.setup do |config|
   # ==> ORM configuration
@@ -9,7 +11,7 @@ Ckeditor.setup do |config|
   # Allowed image file types for upload.
   # Set to nil or [] (empty array) for all file types
   # By default: %w(jpg jpeg png gif tiff)
-  config.image_file_types = %w(jpg jpeg png gif tiff)
+  config.image_file_types = %w[jpg jpeg png gif tiff]
 
   # Allowed flash file types for upload.
   # Set to nil or [] (empty array) for all file types

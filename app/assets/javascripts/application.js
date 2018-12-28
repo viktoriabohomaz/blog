@@ -17,5 +17,4 @@
 //= require bootstrap-sprockets
 //= require popper
 //= require turbolinks
-//= require ckeditor/init
 //= require_tree .

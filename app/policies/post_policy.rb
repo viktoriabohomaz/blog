@@ -17,7 +17,7 @@ class Admin::PostPolicy < ApplicationPolicy
   end
 
   def create?
-    user.present? && admin? || copywriter?
+    true
   end
 
   def new?
@@ -25,7 +25,7 @@ class Admin::PostPolicy < ApplicationPolicy
   end
 
   def update?
-    user.present? && admin? || copywriter?
+    true
   end
 
   def edit?

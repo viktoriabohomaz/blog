@@ -48,8 +48,6 @@ gem 'rubocop'
 gem 'devise'
 # user authorization
 gem 'pundit'
-
-gem 'ckeditor'
 gem 'rails-html-sanitizer'
 
 gem 'bullet'

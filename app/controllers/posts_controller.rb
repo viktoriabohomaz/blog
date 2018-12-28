@@ -11,14 +11,6 @@ class PostsController < ApplicationController
     @post.punch(request)
   end
 
-  def update
-    if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
   private
 
   def set_post

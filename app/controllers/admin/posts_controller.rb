@@ -19,9 +19,18 @@ module Admin
     def create
       @post = current_user.posts.new(post_params)
       if @post.save
-        redirect_to admin_posts_path, notice: 'Post was successfully created.'
+        redirect_to post_path(@post), notice: 'Post was successfully created.'
       else
         render :new
+      end
+    end
+
+    def update
+      if @post.update(post_params)
+        byebug
+        redirect_to post_path, notice: 'Post was successfully updated.'
+      else
+        render :edit
       end
     end
 

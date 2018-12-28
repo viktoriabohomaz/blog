@@ -30,12 +30,11 @@ module Admin
     end
 
     private
-      def set_post
-        @post = Post.friendly.find(params[:id])
-      end
-
-      def post_params
-        params.require(:post).permit(:title, :description, :image)
-      end
+    def set_post
+      @post = Post.friendly.find(params[:id])
+    end
+    def post_params
+      params.require(:post).permit(:title, :description, :image)
+    end
   end 
 end  

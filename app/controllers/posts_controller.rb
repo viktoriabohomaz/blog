@@ -14,12 +14,13 @@ class PostsController < ApplicationController
       redirect_to @post, notice: 'Post was successfully updated.'
     else
       render :edit
-    end
+    end  
   end
 
   private
     def set_post
       @post = Post.friendly.find(params[:id])
+      authorize @post
     end
 
     def post_params

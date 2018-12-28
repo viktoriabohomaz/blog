@@ -23,7 +23,6 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 RSpec.configure do |config|
-  config.filter_run show_in_doc: true if ENV['APIPIE_RECORD']
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
   config.include FactoryBot::Syntax::Methods

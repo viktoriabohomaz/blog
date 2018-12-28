@@ -8,8 +8,10 @@ class Post < ApplicationRecord
   friendly_id :title, use: :slugged
 
   mount_uploader :image, ImageUploader
-
+  validates :title, :description, presence: true
   belongs_to :user, counter_cache: true
+
+  private
 
   def should_generate_new_friendly_id?
     title_changed?

@@ -1,31 +1,17 @@
 # frozen_string_literal: true
 
-class Admin::PostPolicy < ApplicationPolicy
-  attr_reader :user, :record
-
-  def initialize(user, record)
-    @user = user
-    @record = record
-  end
-
-  def index?
-    true
-  end
-
-  def show?
-    true
-  end
+class PostPolicy < ApplicationPolicy
 
   def create?
-    true
+    user.present?
   end
-
+  
   def new?
     create?
   end
 
   def update?
-    true
+    user.present? && record.present? && (record.user_id == user.id) || admin?
   end
 
   def edit?
@@ -33,12 +19,7 @@ class Admin::PostPolicy < ApplicationPolicy
   end
 
   def destroy?
-    admin?
-  end
+    user.present? && record.present? && admin?
+  end 
+end   
 
-  class Scope < Scope
-    def resolve
-      scope.all
-    end
-  end
-end

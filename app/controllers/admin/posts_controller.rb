@@ -4,20 +4,22 @@ module Admin
   class PostsController < ApplicationController
     helper PostsHelper
     before_action :authenticate_user!
-    before_action :set_post, only: %i[edit destroy]
-
+    before_action :set_post, only: %i[edit destroy update]
+    
     def index
-      @posts = Post.order(:created_at).page(params[:page])
+      @posts = policy_scope(Post).page(params[:page])
     end
 
     def new
       @post = current_user.posts.new
+      authorize @post
     end
 
     def edit; end
 
     def create
       @post = current_user.posts.new(post_params)
+      authorize @post
       if @post.save
         redirect_to post_path(@post), notice: 'Post was successfully created.'
       else
@@ -27,7 +29,6 @@ module Admin
 
     def update
       if @post.update(post_params)
-        byebug
         redirect_to post_path, notice: 'Post was successfully updated.'
       else
         render :edit
@@ -43,6 +44,7 @@ module Admin
 
     def set_post
       @post = Post.friendly.find(params[:id])
+      authorize @post
     end
 
     def post_params

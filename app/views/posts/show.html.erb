@@ -1,0 +1,23 @@
+<% provide(:page_title, @post.title) %>
+<% provide(:blog_active, 'active') %>
+
+<div class='container'>
+	<div class="row pb-3">	
+		<div class="col-md-auto col-xs-text-center">
+			<div style='font-family: Helvetica Neue'>
+			  <h1 class='pb-3'><%= @post.title %></h1>
+				<% if @post.image.file.present? %>
+			  <%= image_tag @post.image_url, class: "img-fluid img-thumbnail pb-4"%>
+				<% end %>
+				<div class='container pb-3'>	
+	    		<p class='text-left'><%= @post.description %></p>
+	    	</div>
+	  		<%= link_to 'Back to blog', root_path, class: 'btn btn-read' %>
+  		</div>  	
+  </div>
+</div>
+<% get_random_posts_for_page %>
+<h1>Similar posts</h1>
+<div class="row mt-2">		
+	<%= render @posts %>
+</div>

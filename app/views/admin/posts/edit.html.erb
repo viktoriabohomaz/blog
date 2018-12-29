@@ -1,0 +1,8 @@
+<% provide(:page_title, "Edit #{@post.title}") %>
+<% provide(:blog_active, 'active') %>
+<h1>Editing Post</h1>
+
+<%= render 'form_edit', post: @post %>
+
+<%= link_to 'Show', @post %> |
+<%= link_to 'Back', admin_posts_path %>

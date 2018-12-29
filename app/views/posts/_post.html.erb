@@ -1,0 +1,11 @@
+<div class='col-sm-6 col-lg-4'>
+  <div class="card">
+    <%= render 'image', post: post %>
+    <div class="card-block">
+      <h4 class="card-title"><%= link_to post.title, post %></h4>
+      <p class="viewed">Viewed <%= post.hits %> times</p>
+      <p class="card-text"><%= truncate(post.description, length: 130) %></p>
+      <%= link_to 'Read more', post, class: 'btn btn-read' %>
+    </div>
+  </div>
+</div>

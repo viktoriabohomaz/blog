@@ -3,27 +3,25 @@
 require 'rails_helper'
 
 RSpec.describe UserPolicy do
-  let(:user) { User.new }
 
-  subject { described_class }
+  subject { described_class.new(user, user) }
 
-  permissions '.scope' do
-    pending "add some examples to (or delete) #{__FILE__}"
+  let(:user) { FactoryBot.create(:user) }
+
+  context 'being a copywriter' do
+    let(:user) { FactoryBot.create(:user) }
+
+    it { is_expected.to forbid_action(:index) }
+    it { is_expected.to forbid_action(:destroy) }
+    it { is_expected.to forbid_new_and_create_actions }
   end
 
-  permissions :show? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
+  context 'being an admin' do
+    let(:user) { FactoryBot.create(:user, role: 'admin') }
 
-  permissions :create? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :update? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :destroy? do
-    pending "add some examples to (or delete) #{__FILE__}"
+    it { is_expected.to permit_action(:index) }
+    it { is_expected.to permit_action(:destroy) }
+    it { is_expected.to permit_new_and_create_actions }
   end
 end
+

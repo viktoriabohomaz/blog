@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :copywriter do
+  factory :user do
     email { Faker::Internet.email }
     password { Faker::Internet.password(8) }
   end
@@ -14,7 +14,7 @@ FactoryBot.define do
 
   trait :with_posts do
     after(:create) do |_p|
-      create_list(:post, 5, user: copywriter)
+      create_list(:post, 5, user: user)
     end
   end
 end

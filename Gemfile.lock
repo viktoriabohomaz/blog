@@ -170,6 +170,8 @@ GEM
       voight_kampff (~> 0.2)
     pundit (2.0.0)
       activesupport (>= 3.0.0)
+    pundit-matchers (1.6.0)
+      rspec-rails (>= 3.0.0)
     rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -328,8 +330,8 @@ DEPENDENCIES
   puma (~> 3.11)
   punching_bag
   pundit
+  pundit-matchers (~> 1.6.0)
   rails (~> 5.2.2)
-  rails-html-sanitizer
   rails-ujs (~> 5.1.0.beta1)
   rspec-rails
   rubocop

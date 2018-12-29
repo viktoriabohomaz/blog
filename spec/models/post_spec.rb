@@ -8,7 +8,7 @@ RSpec.describe Post, type: :model do
   end
 
   context 'validation' do
-  	it { should validate_presence_of(:title) }
+    it { should validate_presence_of(:title) }
     it { should validate_presence_of(:description) }
-  end  
+  end
 end

@@ -3,10 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  let!(:post) { FactoryBot.create(:post)}
+  let!(:post) { FactoryBot.create(:post) }
 
   describe 'GET #index' do
-
     it 'returns a success response' do
       get :index
       expect(response).to be_successful

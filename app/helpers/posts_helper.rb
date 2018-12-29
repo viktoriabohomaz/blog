@@ -6,6 +6,6 @@ module PostsHelper
   end
 
   def get_random_posts_for_page
-  	@posts = Post.all.sample(3)
-	end
+    @posts = Post.all.sample(3)
+  end
 end

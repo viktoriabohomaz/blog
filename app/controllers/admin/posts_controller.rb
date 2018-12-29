@@ -5,7 +5,7 @@ module Admin
     helper PostsHelper
     before_action :authenticate_user!
     before_action :set_post, only: %i[edit destroy update]
-    
+
     def index
       @posts = policy_scope(Post).page(params[:page])
     end

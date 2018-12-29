@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe PostPolicy do
-
   subject { described_class.new(user, post) }
 
   let(:post) { FactoryBot.create(:post) }

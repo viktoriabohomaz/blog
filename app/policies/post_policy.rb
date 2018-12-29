@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 class PostPolicy < ApplicationPolicy
-
   def create?
     user.present?
   end
-  
+
   def new?
     create?
   end
@@ -20,6 +19,5 @@ class PostPolicy < ApplicationPolicy
 
   def destroy?
     user.present? && record.present? && admin?
-  end 
-end   
-
+  end
+end

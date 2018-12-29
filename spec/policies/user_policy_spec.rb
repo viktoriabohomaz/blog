@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe UserPolicy do
-
   subject { described_class.new(user, user) }
 
   let(:user) { FactoryBot.create(:user) }
@@ -24,4 +23,3 @@ RSpec.describe UserPolicy do
     it { is_expected.to permit_new_and_create_actions }
   end
 end
-

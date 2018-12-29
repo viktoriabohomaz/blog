@@ -1,24 +1,16 @@
-# README
+## Test task (Blog)
+---
+[ Admin panel ](https://intense-cove-86046.herokuapp.com/admin/posts)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Admin
 
-Things you may want to cover:
+```
+login: 'admin@example.com'
+password: '123456789'
+```
+Copywriter
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+login: 'copy@example.com'
+password: '123456789'
+```

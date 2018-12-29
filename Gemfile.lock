@@ -325,7 +325,7 @@ DEPENDENCIES
   factory_bot_rails (~> 4.0)
   faker
   figaro
-  friendly_id (~> 5.2.4)
+  friendly_id (~> 5.2.1)
   jbuilder (~> 2.5)
   jquery-rails
   kaminari

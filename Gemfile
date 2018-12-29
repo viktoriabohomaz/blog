@@ -38,7 +38,7 @@ gem 'punching_bag'
 # image uploader
 gem 'carrierwave', '~> 1.0'
 # link naming
-gem 'friendly_id', '~> 5.2.4'
+gem 'friendly_id', '~> 5.2.1'
 # env configuration
 gem 'figaro'
 # pagination

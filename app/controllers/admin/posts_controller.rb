@@ -29,7 +29,7 @@ module Admin
 
     def update
       if @post.update(post_params)
-        redirect_to post_path, notice: 'Post was successfully updated.'
+        redirect_to post_path(@post), notice: 'Post was successfully updated.'
       else
         render :edit
       end

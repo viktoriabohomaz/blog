@@ -8,6 +8,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create(email: 'admin@example.com', password: '123456789', role: 'admin')
+User.create(email: 'copy@example.com', password: '123456789', role: 'copywriter')
 
 10.times do
   User.create(
@@ -20,6 +21,6 @@ end
   Post.create(
     title: Faker::Lebowski.quote,
     description: Faker::Lorem.paragraph_by_chars(800, false),
-    user_id: rand(1..11)
+    user_id: rand(1..12)
   )
 end

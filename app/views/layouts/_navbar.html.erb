@@ -9,7 +9,6 @@
     </div>
   </div>
 </div>
-
 <nav class="navbar navbar-light bg-faded">
   <div class='container'>
     <a class='navbar-brand' href='/'>
@@ -22,8 +21,11 @@
       </li>
     <% if user_signed_in? %>
       <li class="nav-item">
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+        <%= link_to 'Admin panel', admin_posts_path, class: "nav-link" %>
       </li>
+      <li class="nav-item">
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>      
     <% end %>  
     </ul>
   </nav>

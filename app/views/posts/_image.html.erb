@@ -1,0 +1,5 @@
+<% if post.image.file.nil? %>
+  <div class="card-topper" style='background-image: url(https://images.pexels.com/photos/1709531/pexels-photo-1709531.jpeg);'></div>
+<% else %>
+  <div class="card-topper" style='background-image: url(<%= post.image_url(:thumb) %>);'></div>
+<% end %>	

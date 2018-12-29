@@ -1,4 +1,9 @@
-<h1>Users</h1>
+<% provide(:page_title, "All Users | Admin ") %>
+<% provide(:admin_active, 'active') %>
+<tr>
+<td class='btn btn-sm btn-warning'>Users</td>
+<td><%= link_to 'Posts', admin_posts_path %></td>
+</tr>
 <div class="row">
   <table class="table table-striped">
   <% @users.each do |user| %>  

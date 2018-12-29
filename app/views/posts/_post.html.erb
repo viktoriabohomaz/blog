@@ -1,15 +1,11 @@
 <div class='col-sm-6 col-lg-4'>
   <div class="card">
-  	<% if post.image.file.nil? %>
-  		<div class="card-topper" style='background-image: url(https://images.pexels.com/photos/1709531/pexels-photo-1709531.jpeg);'></div>
-    <% else %>
-    	<div class="card-topper" style='background-image: url(<%= post.image_url(:thumb) %>);'></div>
-    <% end %>	
+    <%= render 'image', post: post %>
     <div class="card-block">
       <h4 class="card-title"><%= link_to post.title, post %></h4>
-      <p class="viewed">Viewed <%= post.hits %></p>
+      <p class="viewed">Viewed <%= post.hits %> times</p>
       <p class="card-text"><%= truncate(post.description, length: 130) %></p>
-      <%= link_to 'Read', post, class: 'btn btn-read' %>
+      <%= link_to 'Read more', post, class: 'btn btn-read' %>
     </div>
   </div>
 </div>

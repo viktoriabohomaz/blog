@@ -164,7 +164,7 @@ GEM
     popper_js (1.14.5)
     powerpack (0.1.2)
     public_suffix (3.0.3)
-    puma (3.12.0)
+    puma (3.12.6)
     punching_bag (0.6.0)
       railties (>= 3.2)
       voight_kampff (~> 0.2)
@@ -332,7 +332,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   mini_magick (~> 4.8)
   pg (>= 0.18, < 2.0)
-  puma (~> 3.11)
+  puma (~> 3.12)
   punching_bag
   pundit
   pundit-matchers (~> 1.6.0)

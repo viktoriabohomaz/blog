@@ -36,7 +36,7 @@ gem 'rails-ujs', '~> 5.1.0.beta1'
 # viewed counter
 gem 'punching_bag'
 # image uploader
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 # link naming
 gem 'friendly_id', '~> 5.2.1'
 # env configuration
